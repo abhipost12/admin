@@ -37,5 +37,5 @@ jobs:
           GITHUB_CLIENT_ID: Iv23liQzqPSR3ew9BLSu
           GITHUB_CLIENT_SECRET: ${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}
           RSA_PRIVATE_KEY: ${{ secrets.RSA_PRIVATE_KEY }}
-        run: docker-compose up -d
+        run: docker compose up -d
         
