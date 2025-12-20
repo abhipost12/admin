@@ -29,14 +29,13 @@ jobs:
       - uses: actions/setup-node@v4
       - run: npm install
         working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
-      - run: npm run full-sync
-        working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
+      - name: Run docker-compose
         env:
           GH_ORG: abhipost12
           APP_ID: 2504975
           PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
           GITHUB_CLIENT_ID: Iv23liQzqPSR3ew9BLSu
           GITHUB_CLIENT_SECRET: ${{ secrets.SAFE_SETTINGS_GITHUB_CLIENT_SECRET }}
-          ADMIN_REPO: .github
-          CONFIG_PATH: safe-settings
-          DEPLOYMENT_CONFIG_FILE: ${{ github.workspace }}/safe-settings/deployment-settings.yml
+          RSA_PRIVATE_KEY: ${{ secrets.RSA_PRIVATE_KEY }}
+        run: docker-compose up -d
+        
