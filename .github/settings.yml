@@ -1,6 +1,35 @@
-repository:
-  name: settings
-  description: Pull Requests for GitHub repository settings
-  homepage: https://github.com/apps/settings
-  topics: probot-app, github-app
-  has_wiki: false
+# These settings are synced to GitHub by https://github.com/github/safe-settings
+branches:
+  - name: default
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 2
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        require_last_push_approval: true
+        required_signatures: true
+        require_linear_history: false
+        bypass_pull_request_allowances:
+          apps:
+            - Jarvis
+            - Edith
+          users:
+            - TonyStank
+          teams:
+            - Avengers
+        dismissal_restrictions:
+          users:
+            - Hulk
+          teams:
+            - Revengers
+      required_status_checks:
+        strict: true
+        checks:
+          - stark-industries/barndoor-protocol
+          - stark-industries/sokovia-accords
+      enforce_admins: true
+      restrictions:
+        users:
+          - starlord
+        teams:
+          - guardians
