@@ -32,7 +32,7 @@ jobs:
       - run: npm run full-sync
         working-directory: ${{ env.SAFE_SETTINGS_CODE_DIR }}
         env:
-          GH_ORG: ${{ env.SAFE_SETTINGS_GH_ORG }}
+          GH_ORG: abhipost12
           APP_ID: 2504975
           PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
           GITHUB_CLIENT_ID: Iv23liQzqPSR3ew9BLSu
